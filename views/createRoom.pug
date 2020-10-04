@@ -1,0 +1,26 @@
+extends overview
+
+block midContent
+    .createRoom__box
+      .createRoom__box--contentBox
+        form.form__upload
+          .formSeparator--left
+            .form__upload--contents
+              img.createRoom__box--image(src="/img/groups/default.png" alt="")
+              input#photo.createRoom__box--imageUploadBtnInput(type="file" accept="image/" name="photo")
+              label.btn.createRoom__box--imageUploadBtnLabel(for="photo") Upload photo
+          .formSeparator--right
+            .form__upload--contents
+              label(for="name") Name
+              input#name.form__upload--nameInput(type="text" required="required")
+            .form__upload--contents
+              label(for="description") Description
+              textarea#description.form__upload--nameInput(name="text" cols="30" rows="10" required="required")
+            .form__upload--contents
+              label(for="password") Password
+              input#password.form__upload--nameInput(type="password" placeholder="••••••••" minlength="8")
+            .form__upload--contents--submitBtnBox
+              button.btn.form__upload--contents--submitBtn
+                | Create
+    
+    h6.createRoomTip * If you don't want any password for your room, then leave it unfilled.

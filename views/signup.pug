@@ -1,0 +1,21 @@
+extends base
+
+block content 
+    .loginBox
+      .row
+        h2.signupHeading SIGN UP
+        form.signupForm
+          .form__group
+            label.form__label Name
+            input.form__input#inputName(type="text", name="email" ,placeholder="Name" ,required, autocomplete="off")
+          .form__group
+            label.form__label Email Adress
+            input.form__input#inputEmail(type="email", name="email" ,placeholder="you@example.com" ,required, autocomplete="off")
+          .form__group
+            label.form__label Password
+            input#inputPassword.form__input(type="password" ,name="password" ,placeholder='••••••••' ,required, minLength='8' )
+          .form__group
+            label.form__label Password Confirm
+            input#inputPasswordConfirm.form__input(type="password" ,name="password" ,placeholder='••••••••' ,required, minLength='8' )
+          .form__group
+            button.form__button.btn Sign up

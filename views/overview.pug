@@ -1,0 +1,47 @@
+extends base
+
+block content
+    .appContainer__left--20
+      .appContainer__left--20--searchBar
+        input#input__search(type='search' name='input__search' placeholder='Search for rooms ')
+      .appContainer__left--20--searchResults
+        
+      h5.groupTitle Groups joined  
+      .appContainer__left--20--joinedGroups 
+        each room in user.roomsJoined
+          .searchReslt
+            a.routeRoom(href=`/room/${room.room.id}` data-roomId=`${room.room.id}`) 
+              img.groupLogo(src=`/img/groups/${room.room.roomImage}` alt='group-image')
+              h5.groupName= room.room.name
+      
+    .appContainer__mid--60
+        block midContent
+      
+    .appContainer__right--20
+      if roomCame
+        .appContainer__right--20--details
+          .appContainer__right--20--details--text
+              h5.groupDetails= roomCame.name
+              - const date = roomCame.createdAt.toDateString();
+              h5.groupDetailsDate= date
+          .appContainer__right--20--details--image
+              img.roomImageInDetails(src=`/img/groups/${roomCame.roomImage}`, alt="")
+        .appContainer__right--20--detailsMembers
+          h5.groupDetailsMembers Members[#{roomCame.members.length}]
+          each member in roomCame.members
+            .Members
+              img.groupLogo(src=`/img/users/${member.user.photo}` alt='group-image')
+              h5.groupName= member.user.name
+      else
+        .appContainer__right--20--details--default
+          h5.groupDetails Default
+          - const date = (new Date(Date.now())).toDateString();
+          h5.groupDetailsDate= date
+        .appContainer__right--20--detailsMembers
+          h5.groupDetailsMembers Members[1]
+            .Members
+              img.groupLogo(src=`/img/users/${user.photo}` alt='group-image')
+              h4.groupName= user.name        
+              
+                
+        

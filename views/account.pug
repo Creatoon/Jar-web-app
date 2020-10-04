@@ -1,0 +1,35 @@
+extends overview
+
+block midContent
+    .createAccount__box
+      .createRoom__box--contentBox
+        form.form__uploadRoom
+          .formSeparator--left
+            .form__upload--contents
+              img.createUser__box--image(src=`img/users/${user.photo}` alt="")
+              input#photo.createRoom__box--imageUploadBtnInput(type="file" accept="image/" name="photo")
+              label.btn.createRoom__box--imageUploadBtnLabel(for="photo") Change photo
+          .formSeparator--right
+            .form__upload--contents
+              label(for="name") Name
+              input#name.form__upload--nameInput.nameForMePage(type="text" required="required" value=`${user.name}`)
+            .form__upload--contents
+              label(for="email") Email Adress
+              input#email.form__upload--nameInput(type="email" required="" name="email" value=`${user.email}`)
+            .form__upload--contents--submitBtnBox
+              button.btn.form__upload--contents--submitBtn
+                | Update
+    .updateNewPassword__Box
+          h2.updateNewPassword__Box--heading Password change
+          form.form-user-password
+            .form__upload--contentsPassword
+              label.form__label(for='password-current') Current password
+              input#password-current.form__upload--nameInput.nameForMePage(type='password', placeholder='••••••••', required, minlength='8')
+            .form__upload--contentsPassword
+              label.form__label(for='password') New password
+              input#password.form__upload--nameInput.nameForMePage(type='password', placeholder='••••••••', required, minlength='8')
+            .form__upload--contentsPassword
+              label.form__label(for='password-confirm') Confirm password
+              input#password-confirm.form__upload--nameInput.nameForMePage(type='password', placeholder='••••••••', required, minlength='8')
+            .form__upload--contentsPassword
+              button.btn.form-user-password--submitButton Save password

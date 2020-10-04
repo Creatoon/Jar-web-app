@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" type="text/css" href='/css/style.css')
+    link(href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet")
+    title Xing App | #{title}
+  body
+    header.header
+      .row.clearfix
+        .header__logoBox
+          img.header__logo(src='/img/utils/origLogo.png')
+        .header__contentBox
+         if user
+            a.btn#header__contentBox--logOut Log Out        
+            a.nav__user(href='/me' , data-userId=`${user.id}`)
+                img.nav__user--img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                span.nav__user--name= user.name.split(' ')[0]
+         else
+            a.btn.header__contentBox--loginBtn(href='/login') Log In
+            a.btn.header__contentBox--signUpBtn Sign Up
+    main.main
+      .error
+        .error__title
+          h2 Uh oh! Something went wrong!
+          h2.error__emoji 😢 🤯
+        .error__msg= msg
+
+  script(src="/js/production/bundle.js" type="text/javascript")        

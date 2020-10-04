@@ -1,0 +1,19 @@
+extends overview
+
+block midContent
+   if user
+      .allMessages
+        each chat in roomCame.allChats
+            - const position = `${chat.user.toString() === user.id.toString() ? 'right' : 'left'}`
+            .fullWidthContainer.clearfix
+              .wholeMessage(class=`${position}`)
+                .msg-box 
+                  .msg-box--message= `${chat.message}`
+                  .senderName= `${chat.userName}`
+                
+                
+          
+      .messageContainer
+        input#messageContainer--input(type='text' placeholder='Type a message' name='originalMsg')
+        img#sendButton(src='/img/utils/paper-plane.png' alt='send-button')
+

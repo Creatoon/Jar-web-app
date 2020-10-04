@@ -1,0 +1,22 @@
+extends overview
+
+block midContent
+    .joinRouter
+      .joinRouter__contentBox
+        .joinRouter__contentBox--details
+          .joinRouter__contentBox--detailsContent
+            img.joinRouter__contentBox--detailsImage(src=`/img/groups/${roomCame.roomImage}` alt="room-image")
+            .joinRouter__contentBox--detailsMain
+              h2.joinRouter__contentBox--detailsName= roomCame.name
+                | 
+              p.joinRouter__contentBox--detailsDescription= roomCame.roomDescription
+                | 
+          - if (roomCame.password !== 'afaefeaJFNEWjfneJEWFFF&^*%t&oiylvhyvkvhEWKNFLKFNEF32E32233&%^76^$%^$&^yfjhcvghCGHCGXFD$@%%%##jkjbjkbjk') 
+              .joinRouter__contentBox--detailsForm
+                form.roomJoinRoterForm
+                  input#roomJoinRoterForm__password(type="password", placeholder="Password" ,required, minLength='8')
+          .joinRouter__contentBox--detailsButtonContainer
+            a.btn.joinRouter__contentBox--detailsButton(href="/room/default")
+              | Cancel
+            button.btn.joinRouter__contentBox--detailsButton#joinRouter__contentBox--detailsButton--join
+              | Join

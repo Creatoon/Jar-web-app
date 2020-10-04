@@ -1,0 +1,15 @@
+extends base
+
+block content 
+    .loginBox
+      .row
+        h2.loginHeading LOG INTO YOUR ACCOUNT
+        form.loginForm
+          .form__group
+            label.form__label(for="email") Email Adress
+            input.form__input#inputEmail(type="email", name="email" ,placeholder="you@example.com" ,required, autocomplete="off")
+          .form__group
+            label.form__label(for="email") Password
+            input#inputPassword.form__input(type="password", name="password" ,placeholder='••••••••' ,required, minLength='8' )
+          .form__group
+            button.form__button.btn Login
