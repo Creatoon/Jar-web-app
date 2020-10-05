@@ -22,7 +22,7 @@ const createAndSendToken = (user, statusCode, res) => {
     httpOnly: true
   };
 
-  if (process.env.NODE_ENV === 'production') {
+ if (req.secure || req.headers('x-forwarded-proto') === 'https') {
     cookieOptions.secure = true;
   }
 
