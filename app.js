@@ -20,6 +20,8 @@ const proposalRouter = require('./routes/proposalRoute');
 // Start Express App
 const app = express();
 
+app.enable('trust proxy');
+
 // Pug Settings
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
