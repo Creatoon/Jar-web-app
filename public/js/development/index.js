@@ -37,7 +37,9 @@ const joinRouter__contentBox = document.querySelector(
 
 // Elements from create room page
 const roomCreateForm = document.querySelector('.form__upload');
-const createRoomBox = document.querySelector('.createRoom__box');
+const roomCreateButton = document.querySelector(
+  '.form__upload--contents--submitBtn'
+);
 
 // Universal user id
 const userUnivId = document.querySelector('.nav__user');
@@ -92,6 +94,8 @@ if (msgInput && searchContent && roomName && msgContainer)
     if (msgbtn) {
       msgbtn.addEventListener('click', e => {
         sendMessage(msgInput, searchContent, roomName, msgContainer, name);
+        msgContainer.scrollTop =
+          msgContainer.scrollHeight - msgContainer.clientHeight;
       });
     }
   });
@@ -100,9 +104,17 @@ if (msgInput && searchContent && roomName && msgContainer)
 if (loginForm) {
   loginForm.addEventListener('submit', e => {
     e.preventDefault();
+
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    document.querySelector('.form__button').classList.add('spinnerInButton');
+    document.querySelector('.form__button').innerHTML = loader;
+
     const email = document.getElementById('inputEmail').value;
     const password = document.getElementById('inputPassword').value;
     login(email, password);
+    document.querySelector('.form__button').classList.remove('spinnerInButton');
+    document.querySelector('.form__button').innerHTML = '';
+    document.querySelector('.form__button').textContent = 'Login';
   });
 }
 
@@ -145,12 +157,12 @@ if (joinRouter__contentBox) {
 
 // For Create Room page
 if (roomCreateForm) {
-  // const submitButton = document.querySelector(
-  //   '.form__upload--contents--submitBtn'
-  // );
-
   roomCreateForm.addEventListener('submit', async e => {
     e.preventDefault();
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    roomCreateButton.classList.add('spinnerInButton');
+    roomCreateButton.innerHTML = loader;
+
     const name = document.getElementById('name').value.trim();
     const description = document.getElementById('description').value.trim();
 
@@ -185,6 +197,10 @@ if (updateMeForm) {
   updateMeForm.addEventListener('submit', async e => {
     e.preventDefault();
 
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    roomCreateButton.classList.add('spinnerInButton');
+    roomCreateButton.innerHTML = loader;
+
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
 
@@ -209,6 +225,14 @@ if (updatePasswordForm) {
   updatePasswordForm.addEventListener('submit', async e => {
     e.preventDefault();
 
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    document
+      .querySelector('.form-user-password--submitButton')
+      .classList.add('spinnerInButton');
+    document.querySelector(
+      '.form-user-password--submitButton'
+    ).innerHTML = loader;
+
     const passwordCurrent = document
       .getElementById('password-current')
       .value.trim();
@@ -225,6 +249,10 @@ if (signUpForm) {
   signUpForm.addEventListener('submit', e => {
     e.preventDefault();
 
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    document.querySelector('.form__button').classList.add('spinnerInButton');
+    document.querySelector('.form__button').innerHTML = loader;
+
     const name = document.getElementById('inputName').value.trim();
     const email = document.getElementById('inputEmail').value.trim();
     const password = document.getElementById('inputPassword').value.trim();
@@ -233,5 +261,8 @@ if (signUpForm) {
       .value.trim();
 
     signup(name, email, password, passwordConfirm);
+    document.querySelector('.form__button').classList.remove('spinnerInButton');
+    document.querySelector('.form__button').innerHTML = '';
+    document.querySelector('.form__button').textContent = 'Sign up';
   });
 }

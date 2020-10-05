@@ -5,7 +5,8 @@ block midContent
       .joinRouter__contentBox
         .joinRouter__contentBox--details
           .joinRouter__contentBox--detailsContent
-            img.joinRouter__contentBox--detailsImage(src=`/img/groups/${roomCame.roomImage}` alt="room-image")
+            -const def = `${roomCame.roomImage === 'default.png' ? '/img/groups/' : ''}`
+            img.joinRouter__contentBox--detailsImage(src=`${def}${roomCame.roomImage}` alt="room-image")
             .joinRouter__contentBox--detailsMain
               h2.joinRouter__contentBox--detailsName= roomCame.name
                 | 

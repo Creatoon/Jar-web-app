@@ -68,5 +68,7 @@ const msgContainer = document.querySelector('.allMessages');
 if (msgContainer) {
   socket.on('broadcast', dat => {
     append(dat, 'left', msgContainer);
+    msgContainer.scrollTop =
+      msgContainer.scrollHeight - msgContainer.clientHeight;
   });
 }

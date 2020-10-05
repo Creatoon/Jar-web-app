@@ -78,7 +78,8 @@ exports.createOne = Model =>
     }
 
     if (req.file) {
-      req.body.roomImage = req.file.filename;
+      console.log(req.file);
+      req.body.roomImage = req.file.Location;
     }
 
     const doc = await Model.create(req.body);

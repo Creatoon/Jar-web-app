@@ -12,13 +12,13 @@ block midContent
           .formSeparator--right
             .form__upload--contents
               label(for="name") Name
-              input#name.form__upload--nameInput(type="text" required="required")
+              input#name.form__upload--nameInput(type="text" required="required" autocomplete="off")
             .form__upload--contents
               label(for="description") Description
-              textarea#description.form__upload--nameInput(name="text" cols="30" rows="10" required="required")
+              textarea#description.form__upload--nameInput(name="text" cols="30" rows="10" required="required" autocomplete="off")
             .form__upload--contents
               label(for="password") Password
-              input#password.form__upload--nameInput(type="password" placeholder="••••••••" minlength="8")
+              input#password.form__upload--nameInput(type="password" placeholder="••••••••" minlength="8" autocomplete="off")
             .form__upload--contents--submitBtnBox
               button.btn.form__upload--contents--submitBtn
                 | Create

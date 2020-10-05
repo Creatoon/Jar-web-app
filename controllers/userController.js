@@ -1,42 +1,36 @@
+const aws = require('aws-sdk');
 const multer = require('multer');
-const sharp = require('sharp');
+const sharpMulters3 = require('multer-sharp-s3');
 const User = require('./../models/userModel');
 const factory = require('./handlerFactory');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 
-const multerStorage = multer.memoryStorage();
+aws.config.update({
+  secretAccessKey: process.env.SecretAccessKey,
+  accessKeyId: process.env.AccessKeyID,
+  region: 'us-east-2'
+});
 
-const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image')) {
-    cb(null, true);
-  } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), false);
-  }
-};
+const s3 = new aws.S3();
 
 const upload = multer({
-  storage: multerStorage,
-  fileFilter: multerFilter
+  storage: sharpMulters3({
+    key: function(req, file, cb) {
+      cb(null, `user-${req.user.id}-${Date.now()}.jpeg`);
+    },
+    s3: s3,
+    Bucket: process.env.AWSBucketName,
+    acl: 'public-read',
+    resize: { width: 400, height: 400 },
+    max: true,
+    metadata: function(req, file, cb) {
+      cb(null, { fieldName: 'userImage' });
+    }
+  })
 });
 
 exports.uploadUserPhoto = upload.single('photo');
-
-exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
-  if (!req.file) {
-    return next();
-  }
-
-  req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
-
-  await sharp(req.file.buffer)
-    .resize(500, 500)
-    .toFormat('jpeg')
-    .jpeg({ quality: 90 })
-    .toFile(`public/img/users/${req.file.filename}`);
-
-  next();
-});
 
 exports.getAllUsers = factory.getAll(User);
 
@@ -61,7 +55,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
   // 2) checking and filtering out the unwanyted details like "ROLES"
   if (req.file) {
-    req.body.photo = req.file.filename;
+    req.body.photo = req.file.Location;
   }
 
   // 3) updating the user

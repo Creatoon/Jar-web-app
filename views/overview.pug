@@ -11,7 +11,8 @@ block content
         each room in user.roomsJoined
           .searchReslt
             a.routeRoom(href=`/room/${room.room.id}` data-roomId=`${room.room.id}`) 
-              img.groupLogo(src=`/img/groups/${room.room.roomImage}` alt='group-image')
+              -const def = `${room.room.roomImage === 'default.png' ? '/img/groups/' : ''}`
+              img.groupLogo(src=`${def}${room.room.roomImage}` alt='group-image')
               h5.groupName= room.room.name
       
     .appContainer__mid--60
@@ -25,12 +26,14 @@ block content
               - const date = roomCame.createdAt.toDateString();
               h5.groupDetailsDate= date
           .appContainer__right--20--details--image
-              img.roomImageInDetails(src=`/img/groups/${roomCame.roomImage}`, alt="")
+              -const def = `${roomCame.roomImage === 'default.png' ? '/img/groups/' : ''}`
+              img.roomImageInDetails(src=`${def}${roomCame.roomImage}`, alt="")
         .appContainer__right--20--detailsMembers
           h5.groupDetailsMembers Members[#{roomCame.members.length}]
           each member in roomCame.members
             .Members
-              img.groupLogo(src=`/img/users/${member.user.photo}` alt='group-image')
+              -const def = `${member.user.photo === 'default.jpg' ? '/img/users/' : ''}`
+              img.groupLogo(src=`${def}${member.user.photo}` alt='user-image')
               h5.groupName= member.user.name
       else
         .appContainer__right--20--details--default
@@ -40,7 +43,8 @@ block content
         .appContainer__right--20--detailsMembers
           h5.groupDetailsMembers Members[1]
             .Members
-              img.groupLogo(src=`/img/users/${user.photo}` alt='group-image')
+              -const def = `${user.photo === 'default.jpg' ? '/img/users/' : ''}`
+              img.groupLogo(src=`${def}${user.photo}` alt='user-image')
               h4.groupName= user.name        
               
                 

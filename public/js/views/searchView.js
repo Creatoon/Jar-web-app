@@ -3,9 +3,11 @@
 import { searchResults } from '../models/search';
 
 const appendSearchResults = (data, searchResultBlock) => {
+  const def = `${data.roomImage === 'default.png' ? '/img/groups/' : ''}`;
+
   const html = `<a href='/join/${data.id}' class="searchReslt"  >
       
-                     <img class="groupLogo" src="/img/groups/${data.roomImage}" alt='group-image'">
+                     <img class="groupLogo" src="${def}${data.roomImage}" alt='group-image'">
                      <h5 class="groupName">${data.name}</h5>
       
                     </a>`;

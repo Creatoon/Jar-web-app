@@ -15,7 +15,8 @@ html(lang="en")
          if user
             a.btn#header__contentBox--logOut Log Out        
             a.nav__user(href='/me' , data-userId=`${user.id}`)
-                img.nav__user--img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                -const def = `${user.photo === 'default.jpg' ? '/img/users/' : ''}`
+                img.nav__user--img(src=`${def}${user.photo}` alt=`Photo of ${user.name}`)
                 span.nav__user--name= user.name.split(' ')[0]
          else
             a.btn.header__contentBox--loginBtn(href='/login') Log In

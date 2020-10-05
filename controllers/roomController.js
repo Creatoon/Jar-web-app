@@ -1,42 +1,38 @@
+const aws = require('aws-sdk');
 const multer = require('multer');
-const sharp = require('sharp');
+const sharpMulters3 = require('multer-sharp-s3');
+//const multerS3 = require('multer-s3');
+//const sharp = require('sharp');
 const AppError = require('../utils/appError');
-const catchAsync = require('../utils/catchAsync');
+//const catchAsync = require('../utils/catchAsync');
 const Room = require('./../models/roomModel');
 const factory = require('./handlerFactory');
 
-const multerStorage = multer.memoryStorage();
+aws.config.update({
+  secretAccessKey: process.env.SecretAccessKey,
+  accessKeyId: process.env.AccessKeyID,
+  region: 'us-east-2'
+});
 
-const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image')) {
-    cb(null, true);
-  } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), false);
-  }
-};
+const s3 = new aws.S3();
 
 const upload = multer({
-  storage: multerStorage,
-  fileFilter: multerFilter
+  storage: sharpMulters3({
+    key: function(req, file, cb) {
+      cb(null, `room-${req.user.id}-${Date.now()}.jpeg`);
+    },
+    s3: s3,
+    Bucket: process.env.AWSBucketName,
+    acl: 'public-read',
+    resize: { width: 150, height: 150 },
+    max: true,
+    metadata: function(req, file, cb) {
+      cb(null, { fieldName: 'testing' });
+    }
+  })
 });
 
 exports.uploadRoomPhoto = upload.single('roomImage');
-
-exports.resizeRoomPhoto = catchAsync(async (req, res, next) => {
-  if (!req.file) {
-    return next();
-  }
-
-  req.file.filename = `room-${req.user.id}-${Date.now()}.jpeg`;
-
-  await sharp(req.file.buffer)
-    .resize(500, 500)
-    .toFormat('jpeg')
-    .jpeg({ quality: 90 })
-    .toFile(`public/img/groups/${req.file.filename}`);
-
-  next();
-});
 
 exports.getAllRooms = factory.getAll(Room);
 exports.getOneRoomById = factory.getOne(Room, {

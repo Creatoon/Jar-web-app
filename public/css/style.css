@@ -891,6 +891,11 @@ a {
 
 /* Loading spinners */
 
+.spinnerInButton {
+  width: 9rem;
+  height: 3rem;
+}
+
 .lds-ellipsis {
   display: inline-block;
   position: absolute;
@@ -900,6 +905,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .lds-ellipsis div {
   position: absolute;
   top: 33px;
@@ -910,6 +916,11 @@ a {
   -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
+.forRoomCreation div {
+  background: #354fc0;
+}
+
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
   -webkit-animation: lds-ellipsis1 0.6s infinite;

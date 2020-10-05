@@ -11,7 +11,7 @@ router
   .post(
     authController.protect,
     roomController.uploadRoomPhoto,
-    roomController.resizeRoomPhoto,
+    // roomController.resizeRoomPhoto,
     roomController.createRoom
   );
 
@@ -23,3 +23,5 @@ router
 router.route('/name/:name').get(roomController.getRoomsByName);
 
 module.exports = router;
+
+// Missing credentials in config, if using AWS_CONFIG_FILE, set AWS_SDK_LOAD_CONFIG=1

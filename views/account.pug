@@ -6,7 +6,8 @@ block midContent
         form.form__uploadRoom
           .formSeparator--left
             .form__upload--contents
-              img.createUser__box--image(src=`img/users/${user.photo}` alt="")
+              -const def = `${user.photo === 'default.jpg' ? '/img/users/' : ''}`
+              img.createUser__box--image(src=`${def}${user.photo}` alt="")
               input#photo.createRoom__box--imageUploadBtnInput(type="file" accept="image/" name="photo")
               label.btn.createRoom__box--imageUploadBtnLabel(for="photo") Change photo
           .formSeparator--right
