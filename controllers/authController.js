@@ -12,21 +12,16 @@ const signToken = id => {
   });
 };
 
-const createAndSendToken = (user, statusCode, res) => {
+const createAndSendToken = (user, statusCode, req, res) => {
   const token = signToken(user._id);
 
-  const cookieOptions = {
+  res.cookie('jwt', token, {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true
-  };
-
- if (req.secure || req.headers('x-forwarded-proto') === 'https') {
-    cookieOptions.secure = true;
-  }
-
-  res.cookie('jwt', token, cookieOptions);
+    httpOnly: true,
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
+  });
 
   user.password = undefined;
 
@@ -49,7 +44,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     role: req.body.role
   });
 
-  createAndSendToken(newUser, 200, res);
+  createAndSendToken(newUser, 200, req, res);
 });
 
 exports.logIn = catchAsync(async (req, res, next) => {
@@ -68,7 +63,7 @@ exports.logIn = catchAsync(async (req, res, next) => {
   }
 
   // 3) If everything ok , send token to client
-  createAndSendToken(user, 201, res);
+  createAndSendToken(user, 200, req, res);
 });
 
 exports.logOut = (req, res) => {
@@ -168,7 +163,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // 4) Log user in, send JWT
-  createAndSendToken(user, 201, res);
+  createAndSendToken(user, 201, req, res);
 });
 
 // Only for rendered pages

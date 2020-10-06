@@ -78,7 +78,6 @@ exports.createOne = Model =>
     }
 
     if (req.file) {
-      console.log(req.file);
       req.body.roomImage = req.file.Location;
     }
 
