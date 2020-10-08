@@ -9,7 +9,7 @@
   The official Code for website
 </p>
 
-<a href="https://github.com/Creatoon/Jaar-Chat-WebApp">
+<a href="https://jaarr.herokuapp.com/">
         Link will be updated soon
 </a>
 
