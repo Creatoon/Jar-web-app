@@ -369,6 +369,7 @@ a {
   border-bottom: 2px solid #333333;
   display: flex;
   flex-direction: row;
+  height: 13%;
 }
 
 .appContainer__right--20--details--default {
@@ -405,8 +406,19 @@ a {
 .appContainer__right--20--detailsMembers {
   text-align: left;
   margin: 5%;
+  margin-right: 0;
   padding-bottom: 1.7rem;
   letter-spacing: 0.1rem;
+  overflow: hidden;
+  height: 83%;
+}
+
+.appContainer__right--20--detailsMembers--text {
+  height: 5%;
+}
+
+.appContainer__right--20--detailsMembers--members {
+  height: 95%;
   overflow: auto;
 }
 

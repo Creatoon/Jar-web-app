@@ -8,6 +8,7 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongosanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+const compression = require('compression');
 
 // Our Own Modules
 const AppError = require('./utils/appError');
@@ -36,7 +37,18 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(
   helmet({
-    contentSecurityPolicy: false
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: [
+          "'self'",
+          'https://bullakijaanamaikon.s3.us-east-2.amazonaws.com'
+        ],
+        styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        scriptSrc: ["'self'"]
+      }
+    }
   })
 );
 
@@ -57,6 +69,8 @@ app.use(mongosanitize());
 
 // Data sanitization against XSS
 app.use(xss());
+
+app.use(compression());
 
 // Test middleware
 app.use((req, res, next) => {

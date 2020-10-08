@@ -29,12 +29,14 @@ block content
               -const def = `${roomCame.roomImage === 'default.png' ? '/img/groups/' : ''}`
               img.roomImageInDetails(src=`${def}${roomCame.roomImage}`, alt="")
         .appContainer__right--20--detailsMembers
-          h5.groupDetailsMembers Members[#{roomCame.members.length}]
-          each member in roomCame.members
-            .Members
-              -const def = `${member.user.photo === 'default.jpg' ? '/img/users/' : ''}`
-              img.groupLogo(src=`${def}${member.user.photo}` alt='user-image')
-              h5.groupName= member.user.name
+          .appContainer__right--20--detailsMembers--text
+            h5.groupDetailsMembers Members[#{roomCame.members.length}]
+          .appContainer__right--20--detailsMembers--members
+            each member in roomCame.members
+              .Members
+                -const def = `${member.user.photo === 'default.jpg' ? '/img/users/' : ''}`
+                img.groupLogo(src=`${def}${member.user.photo}` alt='user-image')
+                h5.groupName= member.user.name
       else
         .appContainer__right--20--details--default
           h5.groupDetails Default
