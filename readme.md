@@ -4,7 +4,8 @@
     </a>
 </div>
 
-[![Build Status](https://github.com/Creatoon/Jar-web-app/workflows/node.js.yml/badge.svg)](https://github.com/Creatoon/Jar-web-app/actions)
+[![Build Status](https://github.com/Creatoon/Jar-web-app/workflows/node.js%20CI/badge.svg)](https://github.com/Creatoon/Jar-web-app/actions)
+
 
 <h1 align="center">JaaR WebApp</h1>
 <p align="center">
