@@ -4,8 +4,6 @@
     </a>
 </div>
 
-[![Build Status](https://github.com/Creatoon/Jar-web-app/workflows/node.js%20CI/badge.svg)](https://github.com/Creatoon/Jar-web-app/actions)
-
 ![Node.js CI](https://github.com/Creatoon/Jar-web-app/workflows/Node.js%20CI/badge.svg?branch=master)
 
 
