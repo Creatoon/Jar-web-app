@@ -15,7 +15,7 @@
 </p>
 
 <a href="https://jaarr.herokuapp.com/">
-        Link will be updated soon
+        Click Here Visit Website
 </a>
 
 ## About
