@@ -14,9 +14,9 @@ const socket = require('socket.io');
 const app = require('./app');
 const socketServer = require('./socketServer');
 
-const DB = process.env.DATABASE.replace(
+const DB = (process.env.NODE_ENV === 'development' ? process.env.DATABASE_TEST : process.env.DATABASE).replace(
   '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
+  (process.env.NODE_ENV === 'development' ? process.env.DATABASE_PASSWORD_TEST : process.env.DATABASE_PASSWORD)
 );
 
 mongoose
