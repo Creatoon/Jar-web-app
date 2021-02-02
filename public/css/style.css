@@ -201,67 +201,6 @@ a {
   float: right;
   display: flex;
   flex-direction: row;
-  /* margin-right: -16rem; */
-}
-
-.header__createButtonBox {
-  float: left;
-  margin: 0 auto;
-  margin-left: 35rem;
-}
-
-@media only screen and (max-width: 1200px) {
-  .header__createButtonBox {
-    margin-left: 39rem;
-  }
-}
-
-@media only screen and (max-width: 1124px) {
-  .header__createButtonBox {
-    margin-left: 34rem;
-  }
-}
-
-@media only screen and (max-width: 1030px) {
-  .header__createButtonBox {
-    margin-left: 29rem;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .header__createButtonBox {
-    margin-left: 39rem;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .header__createButtonBox {
-    margin-left: 34rem;
-  }
-}
-
-@media only screen and (max-width: 830px) {
-  .header__createButtonBox {
-    margin-left: 27rem;
-  }
-}
-
-@media only screen and (max-width: 780px) {
-  .header__createButtonBox {
-    margin-left: 34rem;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .header__createButtonBox {
-    margin-left: 30rem;
-  }
-}
-
-@media only screen and (max-width: 620px) {
-  .header__createButtonBox {
-    margin-left: 22rem;
-  }
 }
 
 /* Section AppContainer */
@@ -280,10 +219,6 @@ a {
   border-bottom-left-radius: 1.3rem;
   border-bottom-right-radius: 1.3rem;
 }
-
-/* .appContainer--mobile {
-  background-color: red;
-} */
 
 .appContainer__left--20 {
   background-color: #292929;
