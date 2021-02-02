@@ -2,11 +2,10 @@ header.header
       .row.clearfix
         .header__logoBox
           img.header__logo(src='/img/utils/origLogo.png')
-        if user
-          .header__createButtonBox
-              a.btn.header__createButton(href='/createRoom') Create Rooms
         .header__contentBox
          if user
+            .header__createButtonBox
+              a.btn.header__createButton(href='/createRoom') Create Rooms
             a.btn#header__contentBox--logOut Log Out        
             a.nav__user(href='/me' , data-userId=`${user.id}`)
                 -const def = `${user.photo === 'default.jpg' ? '/img/users/' : ''}`
@@ -15,4 +14,3 @@ header.header
          else
             a.btn.header__contentBox--loginBtn(href='/login') Log In
             a.btn.header__contentBox--signUpBtn(href='/signup') Sign Up
-         
