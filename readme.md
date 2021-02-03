@@ -9,7 +9,7 @@
 
 <h1 align="center">JaaR WebApp</h1>
 <p align="center">
-  The official Code for website
+  Source code of JAR web app.
 </p>
 
 <a href="https://jaarr.herokuapp.com/">
@@ -18,7 +18,7 @@
 
 ## About
 
-JaaR WebApp is a chatting website where you can create rooms and can get connected with your people.
+JAR is web app that lets you connect to people around the world. You can create rooms and chat with anyone around the globe.
 
 ### How to install
 
