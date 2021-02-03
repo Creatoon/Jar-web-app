@@ -18,7 +18,7 @@
 
 ## About
 
-JAAR is web app that lets you connect to people around the world. You can create room and chat with anyone around the globe.
+JAR is web app that lets you connect to people around the world. You can create room and chat with anyone around the globe.
 
 ### How to install
 
