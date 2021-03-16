@@ -47,7 +47,7 @@ exports.getRoomByIdForRendering = async (req, res, next) => {
   let rightParam;
 
   if (req.originalUrl.startsWith('/room')) {
-    if (req.params.id.startsWith('5') && req.params.id.length === 24) {
+    if ((req.params.id.startsWith('5') || req.params.id.startsWith('6') || req.params.id.startsWith('7') || req.params.id.startsWith('8')) && req.params.id.length === 24) {
       rightParam = req.params.id;
     } else {
       return next(new AppError('No route found with this room name', 400));
