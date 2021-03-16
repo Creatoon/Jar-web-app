@@ -10,9 +10,7 @@ block midContent
                 .msg-box 
                   .msg-box--message= `${chat.message}`
                   .senderName= `${chat.userName}`
-                
-                
-          
+      
       .messageContainer
         input#messageContainer--input(type='text' placeholder='Type a message' name='originalMsg')
         img#sendButton(src='/img/utils/paper-plane.png' alt='send-button')
