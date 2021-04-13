@@ -43,12 +43,17 @@ exports.getOne = (Model, popOptionsOne, popOptionsTwo) =>
   catchAsync(async (req, res, next) => {
     let query;
 
+    console.log('entered0');
+
     if (popOptionsOne || popOptionsTwo) {
       query = await Model.findById(req.params.id)
         .populate(popOptionsOne)
         .populate(popOptionsTwo);
+        console.log('entered1');
     } else {
       query = await Model.findById(req.params.id);
+      console.log(query);
+      console.log('entered2');
     }
 
     const doc = await query;

@@ -7,9 +7,13 @@ block midContent
             - const position = `${chat.user.toString() === user.id.toString() ? 'right' : 'left'}`
             .fullWidthContainer.clearfix
               .wholeMessage(class=`${position}`)
-                .msg-box 
+                .msg-box(data-chatId = chat.id)
                   .msg-box--message= `${chat.message}`
-                  .senderName= `${chat.userName}`
+                  .msg-box--helper.clearfix
+                    .contextMenu
+                      .contextMenuSpan
+                        span
+                    .senderName= `${chat.userName}`
       
       .messageContainer
         input#messageContainer--input(type='text' placeholder='Type a message' name='originalMsg')
