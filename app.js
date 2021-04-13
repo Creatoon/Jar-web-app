@@ -17,6 +17,7 @@ const roomRouter = require('./routes/roomRoute');
 const userRouter = require('./routes/userRoute');
 const viewRouter = require('./routes/viewRoute');
 const proposalRouter = require('./routes/proposalRoute');
+const chatRouter = require('./routes/chatRoute');
 
 // Start Express App
 const app = express();
@@ -85,6 +86,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/rooms', roomRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/proposal', proposalRouter);
+app.use('/api/v1/chat', chatRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

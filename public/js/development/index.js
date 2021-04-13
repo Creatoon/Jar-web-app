@@ -9,6 +9,7 @@ import { signup } from '../models/signup';
 import { roomResult } from '../models/room';
 import { propose } from '../models/proposal';
 import { registerGroup } from '../models/groupRegistration';
+import { deleteChat } from '../models/chat';
 import { updatePassword, updateSettings } from '../models/updateSettings';
 
 // Elements From Message Container
@@ -266,3 +267,20 @@ if (signUpForm) {
     document.querySelector('.form__button').textContent = 'Sign up';
   });
 }
+
+// Context Menu Appear
+document.querySelectorAll(".wholeMessage").forEach((el , index) => {
+  el.addEventListener("mouseover", function(ev) {
+    document.querySelectorAll(".contextMenu")[index].classList.add("show");
+  })
+  el.addEventListener("mouseout", function(ev) {
+    document.querySelectorAll(".contextMenu")[index].classList.remove("show");
+  })
+})
+
+// Deleting Messages
+document.querySelectorAll(".contextMenuSpan").forEach((el,i) => {
+  el.addEventListener("click", function(ev) {
+    deleteChat(document.querySelectorAll(".msg-box")[i].dataset.chatid);
+  })
+})
