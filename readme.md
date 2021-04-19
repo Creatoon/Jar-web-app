@@ -13,7 +13,12 @@
 </p>
 
 <a href="https://jaarr.herokuapp.com/">
-        Click Here Visit Website
+        Click Here To Visit Website
+</a>
+
+## Video Tutorial
+<a href="https://www.youtube.com/watch?v=bxZ6Une2ihc">
+        Click Here To Visit Youtube Video
 </a>
 
 ## About
