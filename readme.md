@@ -38,3 +38,24 @@ JAR is web app that lets you connect to people around the world. You can create 
 1. `npm run dev` (For development enviroment)
 
 2. `npm run start:prod` (To test in production enviroment)
+
+### Screenshots From Website
+
+## Login Page
+
+![Screenshot from 2021-04-19 22-28-04](https://user-images.githubusercontent.com/65965202/115274909-cc35ae80-a15e-11eb-8176-eb16b0a7dbd2.png)
+
+## Create Room Page
+
+![Screenshot from 2021-04-19 22-28-54](https://user-images.githubusercontent.com/65965202/115275045-e8d1e680-a15e-11eb-96e4-b542b9f8958d.png)
+
+## Chat Room Page
+
+![Screenshot from 2021-04-19 22-28-37](https://user-images.githubusercontent.com/65965202/115275208-26367400-a15f-11eb-9f18-fc4514abf6fd.png)
+
+## About Me Page
+
+![Screenshot from 2021-04-19 22-32-56](https://user-images.githubusercontent.com/65965202/115275299-3cdccb00-a15f-11eb-8331-1f31d34dc588.png)
+
+
+
