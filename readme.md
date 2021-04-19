@@ -55,7 +55,8 @@ JAR is web app that lets you connect to people around the world. You can create 
 
 ## About Me Page
 
-![Screenshot from 2021-04-19 22-32-56](https://user-images.githubusercontent.com/65965202/115275299-3cdccb00-a15f-11eb-8331-1f31d34dc588.png)
+![Screenshot from 2021-04-19 22-36-36](https://user-images.githubusercontent.com/65965202/115275676-bb396d00-a15f-11eb-9466-483dae64ace0.png)
+
 
 
 
