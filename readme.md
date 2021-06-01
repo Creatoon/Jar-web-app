@@ -37,8 +37,6 @@ JAR is web app that lets you connect to people around the world. You can create 
 
 1. `npm run dev` (For development enviroment)
 
-2. `npm run start:prod` (To test in production enviroment)
-
 ### Screenshots From Website
 
 ## Login Page
