@@ -8,7 +8,7 @@ To start contributing, follow the below guidelines:
 
 **0.**  Take a look at the existing [issues](https://github.com/Creatoon/Jar-web-app/issues) or create your own issues. Wait for the Issue to be assigned to you after which you can start working on it.
 
-**1.**  Fork [this](https://github.com/Creatoon/Jar-web-app/) repository.
+**1.**  Fork [Jar-web-app](https://github.com/Creatoon/Jar-web-app/) repository.
 
 **2.**  Clone your forked copy of the project.
 
