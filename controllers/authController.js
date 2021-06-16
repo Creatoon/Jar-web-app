@@ -227,3 +227,10 @@ exports.checkValidUser = (req, res, next) => {
 
   next();
 };
+
+exports.redirectIfLoggedIn = (req, res, next) => {
+  if (res.locals.user) {
+    return res.redirect('/room/default');
+  }
+  next();
+};
