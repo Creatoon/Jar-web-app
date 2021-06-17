@@ -39,6 +39,7 @@ router.get(
   viewController.getCreateRoomPage
 );
 
+router.get('/home', viewController.getHomePage);
 router.get('/login', authController.isLoggedIn, viewController.getLogin);
 router.get('/logout', authController.logOut);
 router.get('/signup', authController.isLoggedIn, viewController.getSignupPage);
