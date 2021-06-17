@@ -12,8 +12,12 @@ const router = express.Router({ mergeParams: true });
 
 //router.get('/me', authController.protect, userController.getMe);
 
-router.get('/', viewController.getSignupPage);
-
+router.get(
+  '/',
+  authController.isLoggedIn,
+  authController.redirectIfLoggedIn,
+  viewController.getSignupPage
+);
 router.get('/room/default', authController.protect, viewController.getRoom);
 
 router.get('/me', authController.protect, viewController.getMe);
@@ -39,9 +43,19 @@ router.get(
   viewController.getCreateRoomPage
 );
 
-router.get('/login', authController.isLoggedIn, viewController.getLogin);
+router.get(
+  '/login',
+  authController.isLoggedIn,
+  authController.redirectIfLoggedIn,
+  viewController.getLogin
+);
 router.get('/logout', authController.logOut);
-router.get('/signup', authController.isLoggedIn, viewController.getSignupPage);
+router.get(
+  '/signup',
+  authController.isLoggedIn,
+  authController.redirectIfLoggedIn,
+  viewController.getSignupPage
+);
 //router.get('/room/:roomId', chatController.getAnotherRoom);
 
 module.exports = router;
