@@ -138,6 +138,31 @@ git push -u origin <your_branch_name>
 
 <p align="center"><img src="https://media.tenor.com/images/b562ddcfb131e962f9dfa01bd32a30d1/tenor.gif" width=30%></p>
 
+## Levels & Points
+
+<table>
+
+  <tr>
+    <td>Level 0</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Level 1</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Level 2</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>Level 3</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Level 4</td>
+    <td>45</td>
+  </tr>
+</table>
 
 ## Project Admin👨‍:
 
