@@ -11,7 +11,7 @@ const sock = socket => {
       name: userName
     });
     const date = new Date();
-    const minute = date.getMinutes();
+    let minute = date.getMinutes();
     if (minute <= 9) {
       minute = '0' + minute;
     }
