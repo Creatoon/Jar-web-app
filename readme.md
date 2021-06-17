@@ -23,6 +23,12 @@
         Click Here To Visit Youtube Video
 </a>
 
+<br>
+
+## 💻Tech Stacks
+ <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>  <img alt="Pug" src="https://img.shields.io/badge/pug%20-%2314354C.svg?&style=for-the-badge&logo=pug&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/><img alt="Shell" src="https://img.shields.io/badge/shell%20-%2314354C.svg?&style=for-the-badge&logo=shell&logoColor=green"/> 
+<br>
+
 ## About
 
 JAR is web app that lets you connect to people around the world. You can create rooms and chat with anyone around the globe.
@@ -153,6 +159,23 @@ git push -u origin <your_branch_name>
 
 ![Screenshot from 2021-04-19 22-36-36](https://user-images.githubusercontent.com/65965202/115275676-bb396d00-a15f-11eb-9466-483dae64ace0.png)
 
+<br>
+
+## 🌟 Contributors
+
+Thanks to these wonderful people ✨✨:
+
+<table>
+	<tr>
+		<td>
+			<a href="https://github.com/Creatoon/Jar-web-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Creatoon/Jar-web-app" />
+</a>
+		</td>
+	</tr>
+</table>
+
+<br>
 
 ## Code of Conduct
 <p align="center">
