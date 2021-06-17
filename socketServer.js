@@ -10,13 +10,21 @@ const sock = socket => {
       message: data.message,
       name: userName
     });
-
+    const date = new Date();
+    const minute = date.getMinutes();
+    if (minute <= 9) {
+      minute = '0' + minute;
+    }
+    const newTime = `${date.getHours()}:${minute}`;
+    // eslint-disable-next-line no-console
+    console.log(newTime);
     if (data.roomName !== 'default') {
       const chat = new MessageDB({
         message: data.message,
         room: data.roomName,
         user: data.userId,
-        userName: userName.name
+        userName: userName.name,
+        timestamp: newTime
       });
       chat.save();
     }

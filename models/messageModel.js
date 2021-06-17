@@ -17,8 +17,10 @@ const messageSchema = new mongoose.Schema(
     userName: {
       type: String,
       default: 'anonymous'
-    }
+    },
+    timestamp: String
   },
+
   {
     toJSON: { ObjectId: true },
     toObject: { ObjectId: true },
