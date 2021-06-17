@@ -138,7 +138,7 @@ git push -u origin <your_branch_name>
 
 <p align="center"><img src="https://media.tenor.com/images/b562ddcfb131e962f9dfa01bd32a30d1/tenor.gif" width=30%></p>
 
-## Levels & Points
+## Levels & Points For LGMSOC
 
 <table>
 
