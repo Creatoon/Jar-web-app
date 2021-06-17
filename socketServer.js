@@ -16,8 +16,6 @@ const sock = socket => {
       minute = '0' + minute;
     }
     const newTime = `${date.getHours()}:${minute}`;
-    // eslint-disable-next-line no-console
-    console.log(newTime);
     if (data.roomName !== 'default') {
       const chat = new MessageDB({
         message: data.message,
