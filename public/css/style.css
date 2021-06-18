@@ -14,6 +14,11 @@ Blue-Secondary = #7d5fff
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --outer-shadow: 3px 3px 3px #7158e2, -3px -3px #7158e2;
+  --inner-shadow: inset 3px 3px 3px #7158e2, inset -3px -3px #7158e2;
+  --outer-shadow-0:0 0 0 #7158e2, 0 0 0 #7158e2;
+}
 
 html,
 body {
@@ -148,8 +153,9 @@ a {
 .btn {
   text-decoration: none;
   margin-right: 2.2rem;
-  color: #7158e2;
+  color: white;
   display: block;
+  border-radius: 30%;
   background-color: #1f1f1f;
   margin-top: 1.5rem;
   border-radius: 20rem;
@@ -164,11 +170,33 @@ a {
   transform: translateY(-0.3rem);
   transition: all 0.3s;
 }
+/* .btn{
+  padding: 10px 25px;
+  font-size: 16;
+  font-weight: 500;
+  text-decoration: none;
+  color: avr();
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 30px;
+  color: #7158e2;
+  /* border: 2px solid red; */
+ /* transition: all 0.5s ease;;
+  display: inline-block
+}*/
+.btn:after{
+  border-radius: 30px;
+  /* color: var(--skin-color)  */
+ } 
 
 .btn:active {
   transform: translateY(0) scale(0.95);
 }
-
+.btn:after{
+  border-radius: 30px;
+  /* color: var(--skin-color) */
+}
 .btn:active,
 .btn:hover,
 .btn {
@@ -209,9 +237,9 @@ a {
 
 /* Section AppContainer */
 
-.main {
+/* .main {
   height: 100vh;
-}
+} */
 
 .appContainer {
   background-color: #3d3d3d;
@@ -1005,4 +1033,53 @@ a {
   content: "\03a7";
   font-size: 1.2rem;
   display: inline-block;
+}
+.footer{
+  border-top: 4px solid #161616;
+  background-color: #292929;
+  height:100px;
+  border-bottom-left-radius: 1.3rem;
+  border-bottom-right-radius: 1.3rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #7158e2;
+  padding: 10px;
+  
+}
+.footer a{
+  text-decoration: none;
+  color: #7158e2;
+}
+.appContainer {
+  background-color: #3d3d3d;
+  width: 100%;
+  height: 85vh;
+  margin: 0 auto;
+  display: flex;
+  border-top: 3px solid #161616;
+}
+.outer-shadow{
+  box-shadow: var(--outer-shadow);
+}
+.hover-in-shadow
+{
+  position: relative;
+  z-index: 1;
+}
+.hover-in-shadow:hover{
+  box-shadow: var(--outer-shadow-0);
+}
+.hover-in-shadow:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.hover-in-shadow:hover:after
+{
+  box-shadow: var(--inner-shadow);
 }
