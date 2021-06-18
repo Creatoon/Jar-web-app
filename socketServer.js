@@ -5,7 +5,6 @@ const sock = socket => {
   socket.on('join room', async data => {
     socket.join(data.roomName);
     const userName = await User.findById(data.userId);
-
     socket.to(data.roomName).broadcast.emit('broadcast', {
       message: data.message,
       name: userName
