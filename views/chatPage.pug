@@ -8,6 +8,7 @@ block midContent
             .fullWidthContainer.clearfix
               .wholeMessage(class=`${position}`)
                 .msg-box(data-chatId = chat.id)
+                  .senderName= `${chat.timestamp}` 
                   .msg-box--message= `${chat.message}`
                   .msg-box--helper.clearfix
                     .contextMenu

@@ -9,6 +9,7 @@ const append = (data, position, msgContainer) => {
     html = `<div class="fullWidthContainer clearfix">
       <div class="wholeMessage ${position}">
       <div class="msg-box">
+      <div class="senderName">now</div> 
       <div class="msg-box--message">${data.message}</div>
       <div class="senderName">${data.name.name}</div>
       </div>
@@ -18,6 +19,7 @@ const append = (data, position, msgContainer) => {
     html = `<div class="fullWidthContainer clearfix">
       <div class="wholeMessage ${position}">
       <div class="msg-box">
+      <div class="senderName">now</div> 
       <div class="msg-box--message">${data.message}</div>
       <div class="senderName">You</div>
       </div>
