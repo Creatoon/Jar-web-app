@@ -12,6 +12,10 @@
   Source code of JAR web app.
 </p>
 
+## Installation Video
+![5duna4](https://user-images.githubusercontent.com/75167785/122649966-06ff9700-d14e-11eb-8592-8729f51c551d.gif)
+
+
 ## Website Link
 
 <a href="https://jaarr.herokuapp.com/">
