@@ -7,7 +7,7 @@ block midContent
             - const position = `${chat.user.toString() === user.id.toString() ? 'right' : 'left'}`
             .fullWidthContainer.clearfix
               .wholeMessage(class=`${position}`)
-                .msg-box(data-chatId = chat.id)
+                .msg-box(data-chatId = chat.id data-chatuser=chat.user)
                   .senderName= `${chat.timestamp}` 
                   .msg-box--message= `${chat.message}`
                   .msg-box--helper.clearfix
