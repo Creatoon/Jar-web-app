@@ -16,5 +16,5 @@ exports.deleteChat = async (req, res) => {
     status: 'success',
     data: null
   });
-  //   factory.deleteOne(Chat);
+ 
 };
