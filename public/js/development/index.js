@@ -269,18 +269,24 @@ if (signUpForm) {
 }
 
 // Context Menu Appear
-document.querySelectorAll(".wholeMessage").forEach((el , index) => {
-  el.addEventListener("mouseover", function(ev) {
-    document.querySelectorAll(".contextMenu")[index].classList.add("show");
-  })
-  el.addEventListener("mouseout", function(ev) {
-    document.querySelectorAll(".contextMenu")[index].classList.remove("show");
-  })
-})
+document.querySelectorAll('.wholeMessage').forEach((el, index) => {
+  const id = el.childNodes[0].getAttribute('data-chatuser');
+  const loggedIn = document
+    .querySelector('[data-userid]')
+    .getAttribute('data-userid');
+  if (id == loggedIn) {
+    el.addEventListener('mouseover', function(ev) {
+      document.querySelectorAll('.contextMenu')[index].classList.add('show');
+    });
+    el.addEventListener('mouseout', function(ev) {
+      document.querySelectorAll('.contextMenu')[index].classList.remove('show');
+    });
+  }
+});
 
 // Deleting Messages
-document.querySelectorAll(".contextMenuSpan").forEach((el,i) => {
-  el.addEventListener("click", function(ev) {
-    deleteChat(document.querySelectorAll(".msg-box")[i].dataset.chatid);
-  })
-})
+document.querySelectorAll('.contextMenuSpan').forEach((el, i) => {
+  el.addEventListener('click', function(ev) {
+    deleteChat(document.querySelectorAll('.msg-box')[i].dataset.chatid);
+  });
+});

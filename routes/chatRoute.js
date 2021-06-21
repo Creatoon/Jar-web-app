@@ -5,9 +5,7 @@ const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
-router
-  .route('/')
-  .get(authController.protect, chatController.getAllChats);
+router.route('/').get(authController.protect, chatController.getAllChats);
 
 router
   .route('/:id')
