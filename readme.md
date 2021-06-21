@@ -14,6 +14,8 @@
 
 ## Website Link
 
+[![Join the chat at https://gitter.im/Jar-web-app/community](https://badges.gitter.im/Jar-web-app/community.svg)](https://gitter.im/Jar-web-app/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <a href="https://jaarr.herokuapp.com/">
         Click Here To Visit Website
 </a>
