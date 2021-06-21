@@ -103,8 +103,6 @@ git checkout -b <your_branch_name>
 
 **8.** Perform your desired changes to the code base.
 
-<p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
-
 **9.** Track your changes:heavy_check_mark: .
 
 ```
@@ -137,8 +135,6 @@ git push -u origin <your_branch_name>
 
 **16.** Sit back patiently and relax while the project maintainers review your PR. Please understand, at times the time taken to review a PR can vary from a few hours to a few days.
 
-<p align="center"><img src="https://media.tenor.com/images/b562ddcfb131e962f9dfa01bd32a30d1/tenor.gif" width=30%></p>
-
 ## Levels & Points For LGMSOC
 
 <table>
@@ -165,30 +161,13 @@ git push -u origin <your_branch_name>
   </tr>
 </table>
 
-## Project Admin👨‍:
-
-<p align="center">
-<img width=20% src="https://avatars.githubusercontent.com/u/65965202?v=4">
-</p>
-
-<a href="https://github.com/Creatoon">
-<h5 align="center"><b>Raj Aryan</b></a>
-
-
-## About Me Page
-
-![Screenshot from 2021-04-19 22-36-36](https://user-images.githubusercontent.com/65965202/115275676-bb396d00-a15f-11eb-9466-483dae64ace0.png)
-
-
 ## Code of Conduct
 <p align="center">
 <a href="https://github.com/Creatoon/Jar-web-app/blob/development/CODE_OF_CONDUCT.md">
-<img width=35% src="https://cdn-media-1.freecodecamp.org/images/1*v4jyaugHQXBSf2O4D66Onw.gif"></p>
 <h5 align="center"><b>Click to read</b></a>  
 
 ## License 
 <p align="center">
 <a href="https://github.com/Creatoon/Jar-web-app/blob/development/LICENSE">
-<img width=35% src="https://media.tenor.com/images/68ecdcb63296f1db6532bf5b83051da9/tenor.gif"></p>
 <h5 align="center"><b>MIT License</b></a> 
 
