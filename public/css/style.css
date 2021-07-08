@@ -148,7 +148,7 @@ a {
 .btn {
   text-decoration: none;
   margin-right: 2.2rem;
-  color: #7158e2;
+  color: azure;
   display: block;
   background-color: #1f1f1f;
   margin-top: 1.5rem;
@@ -159,7 +159,7 @@ a {
   padding-bottom: 0.8rem;
   font-size: 1.8rem;
   font-weight: 400;
-  box-shadow: 0 0.2rem 0.5rem #7158e2;
+  box-shadow: 0 0.2rem 0.5rem azure;
   cursor: pointer;
   transform: translateY(-0.3rem);
   transition: all 0.3s;
@@ -169,7 +169,7 @@ a {
   transform: translateY(0) scale(0.95);
 }
 
-.btn:hover{
+.btn:hover {
   transform: scale(1.1);
 }
 
@@ -521,12 +521,12 @@ a {
 }
 
 .loginHeading {
-  color: #7158e2;
+  color: azure;
   margin-top: 6rem;
 }
 
 .signupHeading {
-  color: #7158e2;
+  color: azure;
   margin-top: 2rem;
 }
 
@@ -545,7 +545,7 @@ a {
 }
 
 .nav__user--name {
-  color: #7158e2;
+  color: azure;
   margin-left: 2rem;
   margin-right: 2rem;
   display: inline-block;
@@ -1001,12 +1001,12 @@ a {
   border-radius: 50%;
   background-color: #7158e2;
   margin-top: 28%;
-  box-shadow: inset 0 .5rem 1.5rem #222;
+  box-shadow: inset 0 0.5rem 1.5rem #222;
   cursor: pointer;
 }
 
 .contextMenu span::before {
-  content: "\03a7";
+  content: '\03a7';
   font-size: 1.2rem;
   display: inline-block;
 }
