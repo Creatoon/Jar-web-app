@@ -434,6 +434,7 @@ a {
   background-color: #202020;
   border-radius: 1rem;
   padding: 0.5rem 0.8rem;
+  min-width: 12rem;
 }
 
 .right {
