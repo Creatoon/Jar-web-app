@@ -13,6 +13,9 @@
   Source code of JAR web app.
 </p>
 
+## Watch Installation Video
+<img src="views\Installation Video.gif"> 
+
 ## Website Link
 
 <a href="https://jaarr.herokuapp.com/">
