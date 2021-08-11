@@ -206,7 +206,8 @@ a {
 }
 
 .header__contentBox {
-  float: right;
+  justify-content: center;
+  padding-right: 13rem;
   display: flex;
   flex-direction: row;
 }
