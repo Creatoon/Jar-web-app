@@ -469,6 +469,12 @@ a {
   overflow: auto;
 }
 
+
+/* align the signup and login buttons in center */
+.form__group {
+  text-align: -webkit-center;
+}
+
 .defaultBox {
   width: 80%;
   margin-top: 3rem;
