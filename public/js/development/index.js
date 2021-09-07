@@ -106,7 +106,7 @@ if (loginForm) {
   loginForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    const loader = `<div class="lds-ellipsis forRoomCreation">`;
     document.querySelector('.form__button').classList.add('spinnerInButton');
     document.querySelector('.form__button').innerHTML = loader;
 
@@ -160,7 +160,7 @@ if (joinRouter__contentBox) {
 if (roomCreateForm) {
   roomCreateForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
+    const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div> `;
     roomCreateButton.classList.add('spinnerInButton');
     roomCreateButton.innerHTML = loader;
 
@@ -189,7 +189,7 @@ if (roomCreateForm) {
       form.append('roomImage', photo);
     }
 
-    await registerGroup(form, password);
+    await registerGroup(form, password, "image.jpg");
   });
 }
 
@@ -201,7 +201,6 @@ if (updateMeForm) {
     const loader = `<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>`;
     roomCreateButton.classList.add('spinnerInButton');
     roomCreateButton.innerHTML = loader;
-
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
 
@@ -218,8 +217,11 @@ if (updateMeForm) {
       form.append('photo', photo);
     }
 
-    await updateSettings(form);
   });
+  try{(updateSettings(form))}
+  catch(err){
+    updateMeForm.classList.remove('<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>')
+  }
 }
 
 if (updatePasswordForm) {
