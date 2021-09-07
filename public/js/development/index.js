@@ -220,7 +220,7 @@ if (updateMeForm) {
   });
   try{(updateSettings(form))}
   catch(err){
-    updateMeForm.classList.remove('<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>')
+    updateMeForm.classList.remove('<div class="lds-ellipsis forRoomCreation"><div></div><div></div><div></div><div></div></div>');
   }
 }
 
