@@ -14,9 +14,9 @@ const socket = require('socket.io');
 const app = require('./app');
 const socketServer = require('./socketServer');
 
-const DB = (process.env.NODE_ENV === 'development' ? process.env.DATABASE_TEST : process.env.DATABASE).replace(
+const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
-  (process.env.NODE_ENV === 'development' ? process.env.DATABASE_PASSWORD_TEST : process.env.DATABASE_PASSWORD)
+  process.env.DATABASE_PASSWORD
 );
 
 mongoose
@@ -28,7 +28,7 @@ mongoose
   })
   .then(() => console.log('DB CONNECTION SUCCESSFULL !'));
 
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || 3000;
 
 const server = app.listen(port, () => {
   console.log(`server is running on the port ${port}`);
