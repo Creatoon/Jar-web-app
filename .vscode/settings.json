@@ -1,3 +1,5 @@
 {
-    "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "appService.defaultWebAppToDeploy": "/subscriptions/adf45dca-c27a-425f-8629-54e5c2dad9d8/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/creatoon-jar",
+  "appService.deploySubpath": "."
 }
